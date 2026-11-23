@@ -2,185 +2,362 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mentes bajo el algoritmo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Investigación sobre redes sociales, videos cortos, inteligencia artificial y desarrollo cognitivo.">
+<title>Mentes bajo el algoritmo</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+:root {
+  --fondo: #09111f;
+  --panel: #111e31;
+  --panel2: #172740;
+  --azul: #55b8ff;
+  --verde: #72e0c0;
+  --texto: #edf4ff;
+  --suave: #b8c7d9;
+}
 
-    body {
-      margin: 0;
-      background: #0b1020;
-      color: #e8edf8;
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
-    }
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-    header {
-      padding: 20px;
-      text-align: center;
-      background: #121c32;
-      border-bottom: 1px solid #263d61;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.7;
+}
 
-    header h1 {
-      color: #78b7ff;
-      font-size: 30px;
-      line-height: 1.2;
-    }
+header {
+  padding: 65px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #102b4b, #142044, #09111f);
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      padding: 15px;
-      background: #17243b;
-    }
+header h1 {
+  font-size: clamp(2.3rem, 6vw, 4rem);
+  color: var(--azul);
+  margin: 0 0 12px;
+}
 
-    nav a {
-      color: #b9d8ff;
-      text-decoration: none;
-      font-size: 14px;
-    }
+header p {
+  max-width: 750px;
+  margin: auto;
+  color: var(--suave);
+  font-size: 1.1rem;
+}
 
-    .hero {
-      padding: 65px 22px;
-      text-align: center;
-      background: linear-gradient(135deg, #142b50, #241d48);
-    }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #0e1929;
+  border-bottom: 1px solid #263b56;
+  padding: 13px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
 
-    .hero h2 {
-      font-size: 32px;
-      line-height: 1.2;
-    }
+nav a {
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
 
-    .hero p {
-      color: #c4d1e8;
-      max-width: 650px;
-      margin: 20px auto;
-    }
+nav a:hover {
+  color: var(--verde);
+}
 
-    .section {
-      max-width: 850px;
-      margin: auto;
-      padding: 35px 22px;
-    }
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 20px 60px;
+}
 
-    .section h2 {
-      color: #78b7ff;
-      font-size: 25px;
-    }
+section {
+  background: var(--panel);
+  margin: 28px 0;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #253b55;
+  scroll-margin-top: 75px;
+}
 
-    .topic {
-      background: #151f34;
-      border: 1px solid #293c5c;
-      border-radius: 14px;
-      padding: 20px;
-      margin: 18px 0;
-    }
+h2 {
+  color: var(--azul);
+  font-size: 1.8rem;
+  margin-top: 0;
+}
 
-    .topic h3 {
-      color: #a9ccff;
-    }
+h3 {
+  color: var(--verde);
+  margin-bottom: 8px;
+}
 
-    .notice {
-      color: #b8c8df;
-      font-size: 14px;
-    }
+p, li {
+  color: var(--suave);
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #121c32;
-      color: #aab9d0;
-    }
-  </style>
+strong {
+  color: var(--texto);
+}
+
+.hero-question {
+  background: var(--panel2);
+  border-left: 4px solid var(--verde);
+  padding: 20px;
+  margin: 22px 0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: var(--panel2);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #2c4562;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.tag {
+  display: inline-block;
+  background: #183957;
+  color: var(--verde);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.hero-question {
+  color: var(--texto);
+}
+
+a {
+  color: var(--azul);
+}
+
+.sources li {
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #070d17;
+  color: var(--suave);
+  border-top: 1px solid #263b56;
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 22px 17px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 0.82rem;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>MENTES BAJO EL ALGORITMO</h1>
-    <p>Infancia, atención y contenido digital</p>
-  </header>
+<header>
+  <span class="tag">Investigación y divulgación</span>
+  <h1>Mentes bajo el algoritmo</h1>
+  <p>Infancia, atención y contenido digital en la era de las redes sociales.</p>
+</header>
 
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#atencion">Atención</a>
-    <a href="#brainrot">Brainrot</a>
-    <a href="#inteligencia">Inteligencia artificial</a>
-    <a href="#reflexion">Reflexión</a>
-  </nav>
+<nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#atencion">Atención</a>
+  <a href="#brainrot">Brainrot</a>
+  <a href="#ia">Inteligencia artificial</a>
+  <a href="#reflexion">Reflexión</a>
+  <a href="#fuentes">Fuentes</a>
+</nav>
 
-  <section class="hero" id="inicio">
-    <h2>¿Qué está pasando con nuestra mente?</h2>
-    <p>
-      Vivimos rodeados de videos cortos, memes,
-      algoritmos y contenido generado por inteligencia
-      artificial. Pero ¿alguna vez nos hemos preguntado
-      cómo influye todo esto en nuestro desarrollo?
-    </p>
-  </section>
+<main>
 
-  <section class="section" id="atencion">
-    <h2>01. La atención en la era del scroll</h2>
-    <div class="topic">
-      <h3>¿Estamos perdiendo la concentración?</h3>
-      <p>
-        Aquí exploraremos la relación entre los videos
-        cortos, el consumo constante de contenido y
-        nuestra capacidad para mantener la atención.
-      </p>
-      <p class="notice">Investigación científica por incorporar.</p>
+<section id="inicio">
+  <span class="tag">01 · Introducción</span>
+  <h2>¿Quién controla nuestra atención?</h2>
+
+  <p>Las redes sociales, los videojuegos y las plataformas digitales forman parte de la vida cotidiana de millones de niños y adolescentes. A través de ellas podemos aprender, comunicarnos y descubrir nuevos intereses.</p>
+
+  <p>Sin embargo, también existe una preocupación creciente por la cantidad de tiempo que pasamos frente a las pantallas y por las características del contenido que consumimos.</p>
+
+  <div class="hero-question">
+    ¿Estamos desarrollando nuestra mente al ritmo de la tecnología o estamos dejando que los algoritmos decidan cómo utilizamos nuestra atención?
+  </div>
+
+  <h3>El objetivo de esta investigación</h3>
+  <p>Explorar cómo el consumo de videos cortos, contenido repetitivo y materiales generados por inteligencia artificial podría relacionarse con la atención, el aprendizaje y el desarrollo de niños y adolescentes.</p>
+</section>
+
+<section id="atencion">
+  <span class="tag">02 · Atención y concentración</span>
+  <h2>La atención en la era del scroll</h2>
+
+  <p>Muchas plataformas digitales utilizan recomendaciones automáticas para mostrar contenido que podría interesarnos. El desplazamiento infinito y la reproducción automática facilitan pasar de un video a otro sin detenernos demasiado.</p>
+
+  <p>Esta experiencia puede hacer que nos acostumbremos a consumir información de manera rápida y constante. Por eso, investigadores estudian si ciertos patrones de uso intensivo se relacionan con dificultades para mantener la atención o recordar información.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Atención</h3>
+      <p>Es la capacidad de concentrarnos en determinada información mientras dejamos de lado otros estímulos.</p>
     </div>
-  </section>
-
-  <section class="section" id="brainrot">
-    <h2>02. El fenómeno Brainrot</h2>
-    <div class="topic">
-      <h3>Memes, repetición y contenido viral</h3>
-      <p>
-        ¿Qué caracteriza a los memes Brainrot y por qué
-        se han vuelto tan populares entre niños y jóvenes?
-      </p>
-      <p class="notice">Investigación y ejemplos por incorporar.</p>
+    <div class="card">
+      <h3>Memoria</h3>
+      <p>Nos permite almacenar, conservar y recuperar información necesaria para aprender.</p>
     </div>
-  </section>
-
-  <section class="section" id="inteligencia">
-    <h2>03. Inteligencia artificial y contenido infantil</h2>
-    <div class="topic">
-      <h3>Cuando lo artificial parece real</h3>
-      <p>
-        Analizaremos los contenidos generados con
-        inteligencia artificial y los posibles riesgos
-        de exposición a material inapropiado para niños.
-      </p>
-      <p class="notice">Investigación por incorporar.</p>
+    <div class="card">
+      <h3>Aprendizaje</h3>
+      <p>Requiere comprender, relacionar y practicar información, no solamente recibir estímulos.</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section" id="reflexion">
-    <h2>04. Una reflexión necesaria</h2>
-    <div class="topic">
-      <h3>La tecnología no es el enemigo</h3>
-      <p>
-        El objetivo no es rechazar las redes sociales,
-        sino comprender sus efectos y aprender a
-        utilizarlas de manera consciente y responsable.
-      </p>
-    </div>
-  </section>
+  <h3>¿Significa que los videos cortos dañan el cerebro?</h3>
+  <p>No podemos afirmarlo de esa manera. La investigación sobre el uso de videos cortos y las capacidades cognitivas todavía está en desarrollo. Encontrar una relación entre dos fenómenos no demuestra automáticamente que uno sea la causa del otro.</p>
 
-  <footer>
-    <p>Mentes bajo el algoritmo | Proyecto escolar</p>
-    <p>Fuentes e investigaciones: próximamente.</p>
-  </footer>
+  <p>También importan la edad, el tiempo de uso, el contenido, el sueño, las actividades escolares y el entorno familiar.</p>
+</section>
+
+<section id="brainrot">
+  <span class="tag">03 · Cultura de internet</span>
+  <h2>El fenómeno Brainrot</h2>
+
+  <p>La expresión "brainrot" se popularizó en internet para describir contenidos absurdos, repetitivos o extremadamente virales. Algunos ejemplos son los memes que repiten sonidos, frases, personajes o situaciones sin demasiado contexto.</p>
+
+  <p>Este tipo de contenido suele llamar la atención por su humor, sorpresa y facilidad para compartirse. Algunos memes se vuelven tendencias mundiales en cuestión de días.</p>
+
+  <h3>¿Por qué resulta tan atractivo?</h3>
+  <ul>
+    <li>Es sencillo de comprender y compartir.</li>
+    <li>Utiliza sonidos, imágenes y frases fáciles de reconocer.</li>
+    <li>Puede generar curiosidad por conocer la siguiente tendencia.</li>
+    <li>Permite participar en comunidades y bromas compartidas.</li>
+  </ul>
+
+  <h3>¿Existe un peligro?</h3>
+  <p>No hay que confundir el término "brainrot" con un diagnóstico médico. Ver memes absurdos no significa que una persona esté perdiendo inteligencia.</p>
+
+  <p>La pregunta importante es si el consumo excesivo de contenido repetitivo desplaza actividades como leer, descansar, jugar, convivir o realizar tareas que requieren mayor concentración.</p>
+
+  <div class="hero-question">
+    El problema no necesariamente es el meme, sino el lugar que ocupa en nuestra vida cotidiana.
+  </div>
+</section>
+
+<section id="ia">
+  <span class="tag">04 · Tecnología emergente</span>
+  <h2>Inteligencia artificial y contenido infantil</h2>
+
+  <p>Las herramientas de inteligencia artificial permiten crear imágenes, voces, animaciones y videos en muy poco tiempo. Esto abre posibilidades educativas y creativas, pero también facilita la producción masiva de contenido de baja calidad.</p>
+
+  <p>En internet pueden encontrarse videos que utilizan personajes coloridos, canciones repetitivas y situaciones extrañas para atraer la atención de los niños. Algunos incluso pueden presentar contenido confuso o inadecuado pese a su apariencia infantil.</p>
+
+  <h3>¿Qué debemos observar?</h3>
+  <ul>
+    <li>Si el contenido es apropiado para la edad del espectador.</li>
+    <li>Si presenta información falsa o confusa.</li>
+    <li>Si utiliza personajes infantiles para atraer visitas.</li>
+    <li>Si promueve hábitos de consumo excesivo.</li>
+    <li>Si los adultos pueden identificar quién creó el contenido.</li>
+  </ul>
+
+  <h3>La importancia del acompañamiento</h3>
+  <p>La inteligencia artificial no es perjudicial por sí misma. Su impacto depende de cómo se utiliza, qué contenido produce y qué medidas existen para proteger a los menores.</p>
+</section>
+
+<section id="reflexion">
+  <span class="tag">05 · Reflexión final</span>
+  <h2>La tecnología no es el enemigo</h2>
+
+  <p>Las herramientas digitales pueden ser útiles para aprender, comunicarnos y desarrollar nuestra creatividad. El problema aparece cuando su uso desplaza otras actividades necesarias para nuestro bienestar.</p>
+
+  <p>No se trata de eliminar las redes sociales ni de considerar perjudicial todo contenido viral. Se trata de desarrollar una relación más consciente con la tecnología.</p>
+
+  <h3>Algunas medidas prácticas</h3>
+  <ul>
+    <li>Establecer horarios de uso y momentos sin pantallas.</li>
+    <li>Evitar el celular durante las horas de sueño.</li>
+    <li>Combinar el entretenimiento digital con lectura, ejercicio y convivencia.</li>
+    <li>Revisar la calidad y la edad recomendada del contenido.</li>
+    <li>Aprender a reconocer las recomendaciones automáticas y sus objetivos.</li>
+  </ul>
+
+  <div class="hero-question">
+    La pregunta no es si debemos vivir con tecnología, sino cómo podemos aprovecharla sin dejar que controle todo nuestro tiempo y atención.
+  </div>
+</section>
+
+<section id="fuentes">
+  <span class="tag">06 · Bibliografía</span>
+  <h2>Fuentes para profundizar</h2>
+
+  <p>La información de esta página debe contrastarse con investigaciones científicas y documentos de instituciones especializadas. Estos recursos sirven como punto de partida:</p>
+
+  <ul class="sources">
+    <li>
+      <strong>Organización Mundial de la Salud (OMS).</strong>
+      Recomendaciones y orientaciones sobre actividad física, sedentarismo y salud infantil.
+      <br>
+      <a href="https://www.who.int/" target="_blank" rel="noopener">Consultar OMS</a>
+    </li>
+
+    <li>
+      <strong>UNICEF.</strong>
+      Investigaciones y recursos sobre infancia, derechos digitales y seguridad en internet.
+      <br>
+      <a href="https://www.unicef.org/es" target="_blank" rel="noopener">Consultar UNICEF</a>
+    </li>
+
+    <li>
+      <strong>American Psychological Association.</strong>
+      Recursos sobre adolescentes, redes sociales y salud psicológica.
+      <br>
+      <a href="https://www.apa.org/topics/social-media-internet" target="_blank" rel="noopener">Consultar APA</a>
+    </li>
+
+    <li>
+      <strong>UNESCO.</strong>
+      Orientaciones sobre inteligencia artificial y educación.
+      <br>
+      <a href="https://www.unesco.org/es/digital-education/artificial-intelligence" target="_blank" rel="noopener">Consultar UNESCO</a>
+    </li>
+  </ul>
+
+  <p><strong>Nota:</strong> Las explicaciones de este sitio son de carácter divulgativo y no constituyen un diagnóstico médico. Las investigaciones sobre los efectos del contenido digital continúan evolucionando.</p>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>Mentes bajo el algoritmo</strong></p>
+  <p>Un proyecto de investigación sobre tecnología, atención e infancia.</p>
+</footer>
 
 </body>
-    </html>
-    
+</html>
